@@ -1,0 +1,21 @@
+<template name="study">
+    <div class = "studyContainer">
+    {{#with study}}
+        <div class = "row">    
+            <div class = "col-xs-3">Title</div>
+            <div class = "col-xs-9 editableContent">{{title}}</div>
+        </div>
+        <div class = "row">    
+            <div class = "col-xs-3">Reviewer</div>
+            <div class = "col-xs-9 editableContent">{{reviewer}}</div>
+        </div>
+        {{#each studyItem}}
+            {{> studyItem}}
+        {{/each}}
+        <div class = "row">    
+            <div class = "col-xs-3">Reference</div>
+            <div class = "col-xs-9 editableContent">{{reference}}</div>
+        </div>
+    {{/with}}
+    </div>
+</template>

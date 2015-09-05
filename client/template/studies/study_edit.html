@@ -1,0 +1,34 @@
+<template name="studyEdit2">
+    <div class = "studyContainer">
+    {{#with study}}
+        <div class = "row">    
+            <div class = "col-xs-2">Title</div>
+            <div class = "col-xs-10"><input type = 'text' value = {{title}} id='titleEntry'/></div>
+        </div>
+        <div class = "row">    
+            <div class = "col-xs-2">Reviewer</div>
+            <div class = "col-xs-10"><input type = 'text' value = {{reviewer}} id='reviewerEntry'/></div>
+        </div>
+        <div class = "row">
+            <div class = "col-xs-2">Methods</div>
+            <div class = "col-xs-10">
+        {{#each methods}}
+                    <div class = "row">
+                        <div class = "col-xs-2">{{name}}</div>
+                        <div class = "col-xs-8"><input type = 'text' value = {{content}} id='generalEntry'/></div>
+                    </div>
+        {{/each}}
+            </div>
+        </div>
+        <div class = "row">    
+            <div class = "col-xs-2">Reference</div>
+            <div class = "col-xs-10"><input type = 'text' value = {{reference}} id='referenceEntry'/></div>
+        </div>
+    {{/with}}
+    </div>
+</template>
+
+<template name="studyEdit">
+  {{> quickForm collection="Studies" id="insertStudyForm" type="update" doc=this}}
+</template>
+
